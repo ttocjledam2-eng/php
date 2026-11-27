@@ -1,5 +1,22 @@
 <?php
 declare(strict_types=1);
+
+/**
+ * Генерирует HTML-строку с нечетными числами от $start до $end в столбик.
+ * 
+ * @param int $start Начальное число
+ * @param int $end Конечное число
+ * @return string HTML-код с числами
+ */
+function generateOddNumbersColumn(int $start, int $end): string {
+    $result = '';
+    for ($i = $start; $i <= $end; $i++) {
+        if ($i % 2 !== 0) {
+            $result .= $i . "<br>";
+        }
+    }
+    return $result;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -16,10 +33,7 @@ declare(strict_types=1);
     ЗАДАНИЕ
     - Используя цикл for выведите в столбик Нечётные числа от 1 до 50
     */
-    
-    for ($i = 1; $i <= 50; $i += 2) {
-        echo $i . "<br>";
-    }
+    echo generateOddNumbersColumn(1, 50);
     ?>
 </body>
 </html>
