@@ -1,5 +1,23 @@
 <?php
 declare(strict_types=1);
+
+/**
+ * Выводит символы переданной строки в столбик с помощью цикла while.
+ * 
+ * @param string $text Строка для вывода
+ * @return string HTML-код с символами
+ */
+function printStringColumnWhile(string $text): string {
+    $result = '';
+    $i = 0;
+    $length = mb_strlen($text);
+    
+    while ($i < $length) {
+        $result .= mb_substr($text, $i, 1) . "<br>";
+        $i++;
+    }
+    return $result;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -24,15 +42,8 @@ declare(strict_types=1);
       Е
       Т
     */
-    
     $var = 'ПРИВЕТ';
-    $i = 0;
-    $length = mb_strlen($var); // Используем mb_strlen для корректной работы с кириллицей
-    
-    while ($i < $length) {
-        echo mb_substr($var, $i, 1) . "<br>";
-        $i++;
-    }
+    echo printStringColumnWhile($var);
     ?>
 </body>
 </html>
