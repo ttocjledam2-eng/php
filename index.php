@@ -23,5 +23,13 @@
         <li><a href="lab1/array.php" target="_blank">6. Массивы (array)</a></li>
         <li><a href="lab1/constant.php" target="_blank">7. Константы (constant)</a></li>
     </ul>
+
+    <h2>Лабораторная работа 2</h2>
+    <ul>
+        <li><a href="lab2/for.php" target="_blank">1. Работа с циклом for</a></li>
+        <li><a href="lab2/while.php" target="_blank">2. Работа с циклом while</a></li>
+        <li><a href="lab2/table.php" target="_blank">3. Практическое использование циклов (Таблица умножения)</a></li>
+        <li><a href="lab2/menu.php" target="_blank">4. Практическое использование цикла foreach (Меню)</a></li>
+    </ul>
 </body>
 </html>
