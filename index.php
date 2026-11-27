@@ -30,6 +30,9 @@
         <li><a href="lab2/while.php" target="_blank">2. Работа с циклом while</a></li>
         <li><a href="lab2/table.php" target="_blank">3. Практическое использование циклов (Таблица умножения)</a></li>
         <li><a href="lab2/menu.php" target="_blank">4. Практическое использование цикла foreach (Меню)</a></li>
+        <li><a href="lab2/functions.php" target="_blank">5. Работа с функциями (swap, map)</a></li>
+        <li><a href="lab2/gettable.php" target="_blank">6. Функции getTable</a></li>
+        <li><a href="lab2/getmenu.php" target="_blank">7. Функции getMenu</a></li>
     </ul>
 </body>
 </html>
