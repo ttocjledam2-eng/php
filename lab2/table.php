@@ -2,44 +2,36 @@
 declare(strict_types=1);
 
 /**
- * Функция для генерации таблицы умножения
+ * Отрисовывает таблицу умножения.
  * 
  * @param int $cols Количество столбцов
  * @param int $rows Количество строк
- * @return void
+ * @param string $color Цвет фона заголовков
+ * @return int Возвращает текущее количество вызовов функции
  */
-function renderMultiplicationTable(int $cols, int $rows): void {
+function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int {
+    static $count = 0;
+    $count++;
+
     echo "<table>";
-    
-    // Вывод первой строки (заголовки столбцов)
-    echo "<tr>";
-    echo "<th> </th>"; // Пустая ячейка в левом верхнем углу
+    echo "<tr><th> </th>";
     for ($c = 1; $c <= $cols; $c++) {
-        echo "<th>{$c}</th>";
+        echo "<th style='background-color: {$color};'>{$c}</th>";
     }
     echo "</tr>";
 
-    // Вывод остальных строк
     for ($r = 1; $r <= $rows; $r++) {
         echo "<tr>";
-        echo "<th>{$r}</th>"; // Заголовок строки
+        echo "<th style='background-color: {$color};'>{$r}</th>"; 
         for ($c = 1; $c <= $cols; $c++) {
-            $product = $c * $r;
-            echo "<td>{$product}</td>";
+            echo "<td>" . ($c * $r) . "</td>";
         }
         echo "</tr>";
     }
-    
     echo "</table>";
+    
+    return $count;
 }
-
-/*
-ЗАДАНИЕ 1
-- Создайте две целочисленные переменные $cols и $rows
-- Присвойте созданным переменным произвольные значения в диапазоне от 1 до 10
-*/
-$cols = 10;
-$rows = 10;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -52,37 +44,38 @@ $rows = 10;
         table {
             border: 2px solid black;
             border-collapse: collapse;
+            margin-bottom: 10px;
         }
-
-        th,
-        td {
+        th, td {
             padding: 10px;
             border: 1px solid black;
         }
-
         th {
-            background-color: yellow;
-            font-style: italic; /* Полужирный шрифт */
-            text-align: center; /* Выравнивание по центру */
+            font-style: italic;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Таблица умножения</h1>
+    <h1>Таблица умножения (getTable)</h1>
+    
     <?php
     /*
-    ЗАДАНИЕ 2
-    - Используя циклы отрисуйте таблицу умножения в виде HTML-таблицы на следующих условиях
-      - Число столбцов должно быть равно значению переменной $cols
-      - Число строк должно быть равно значению переменной $rows
-      - Ячейки на пересечении столбцов и строк должны содержать значения, являющиеся произведением порядковых номеров столбца и строки
-    - Рекомендуется использовать цикл for
-
     ЗАДАНИЕ 3
-    - Значения в ячейках первой строки и первого столбца должны быть отрисованы полужирным шрифтом и выровнены по центру ячейки
-    - Фоновый цвет ячеек первой строки и первого столбца должен быть отличным от фонового цвета таблицы
+    - Отрисуйте таблицу умножения вызывая функцию getTable() с различными параметрами
+    - Создайте локальную статическую переменную $count для подсчета числа вызовов функции getTable()
+    - Функция getTable() должна возвращать значение переменной $count
     */
-    renderMultiplicationTable($cols, $rows);
+    $totalCount = getTable(6, 6, 'red');
+    $totalCount = getTable();
+    $totalCount = getTable(8, 10);
+    $totalCount = getTable(5);
+
+    /*
+    ЗАДАНИЕ 5
+    - Используя статическую переменную $count выведите общее число вызовов функции getTable()
+    */
+    echo "<p>Таблица была отрисована {$totalCount} раза</p>";
     ?>
 </body>
 </html>
