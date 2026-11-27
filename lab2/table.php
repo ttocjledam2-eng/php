@@ -50,14 +50,5 @@ declare(strict_types=1);
 	}
 	echo "</table>";
 	?> 
-<body>
-    <h1>Таблица умножения</h1>
-    <?php
-    /*
-    ЗАДАНИЕ 2 и 3
-    (Комментарии опущены для краткости, они есть в самом файле)
-    */
-    echo generateMultiplicationTable($cols, $rows);
-    ?>
 </body>
 </html>
