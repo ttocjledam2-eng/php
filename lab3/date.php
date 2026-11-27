@@ -4,8 +4,8 @@ declare(strict_types=1);
 	ЗАДАНИЕ 1
 	*/
 	$now = time();
-	// Укажите ваш год, месяц и день рождения (например, 2005, 5, 15)
-	$birthday = mktime(0, 0, 0, 5, 15, 2005); 
+	
+	$birthday = mktime(0, 0, 0, 11, 22, 2006); 
 	
 	$dateInfo = getdate();
 	$hour = $dateInfo['hours'];
@@ -56,7 +56,7 @@ declare(strict_types=1);
 	
 	// Если день рождения уже прошел в этом году, считаем до следующего
 	if ($diff < 0) {
-		$birthday = mktime(0, 0, 0, 5, 15, (int)date('Y') + 1);
+		$birthday = mktime(0, 0, 0, 11, 22, (int)date('Y') + 1);
 		$diff = $birthday - $now;
 	}
 
